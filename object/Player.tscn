@@ -1,0 +1,58 @@
+[gd_scene load_steps=10 format=2]
+
+[ext_resource path="res://img/player.png" type="Texture" id=1]
+[ext_resource path="res://img/player_walking.png" type="Texture" id=2]
+[ext_resource path="res://script/player.gd" type="Script" id=3]
+
+
+
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 26.6787, 27.5301 )
+
+[sub_resource type="AtlasTexture" id=2]
+flags = 4
+atlas = ExtResource( 2 )
+region = Rect2( 0, 0, 64, 64 )
+
+[sub_resource type="AtlasTexture" id=3]
+flags = 4
+atlas = ExtResource( 2 )
+region = Rect2( 64, 0, 64, 64 )
+
+[sub_resource type="AtlasTexture" id=4]
+flags = 4
+atlas = ExtResource( 1 )
+region = Rect2( 0, 0, 64, 64 )
+
+[sub_resource type="AtlasTexture" id=5]
+flags = 4
+atlas = ExtResource( 1 )
+region = Rect2( 64, 0, 64, 64 )
+
+[sub_resource type="SpriteFrames" id=6]
+animations = [ {
+"frames": [ SubResource( 2 ), SubResource( 3 ) ],
+"loop": true,
+"name": "walking",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 4 ), SubResource( 5 ) ],
+"loop": true,
+"name": "stand",
+"speed": 1.0
+} ]
+
+[node name="PlayerBody" type="KinematicBody2D"]
+position = Vector2( 102.979, 593.793 )
+script = ExtResource( 3 )
+
+[node name="PlayerShape" type="CollisionShape2D" parent="."]
+position = Vector2( -6.79489, -0.000380367 )
+shape = SubResource( 1 )
+
+[node name="Player" type="AnimatedSprite" parent="."]
+position = Vector2( -6.41753, 1.13171 )
+frames = SubResource( 6 )
+animation = "walking"
+frame = 1
