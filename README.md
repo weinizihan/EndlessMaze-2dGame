@@ -1,6 +1,6 @@
 # 无尽迷宫-一个无聊但多样化的迷宫游戏
 
-Read [English version here](README_EN.md)
+Read [English version here](README_en.md)
 
 ## 项目简介
 
