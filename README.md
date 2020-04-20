@@ -21,6 +21,7 @@ Read [English version here](README_en.md)
 3. 移动端支持
 4. 随机生成关卡
 5. 更多创意请提issue
+<<<<<<< HEAD
 
 ## 创建自己的关卡
 
