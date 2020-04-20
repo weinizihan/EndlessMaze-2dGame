@@ -1,7 +1,4 @@
-extends Area2D
-
-export var thingName="key"
-signal getThing(texture, name)
+extends CanvasLayer
 
 # Declare member variables here. Examples:
 # var a = 2
@@ -18,10 +15,7 @@ func _ready():
 #	pass
 
 
-func _on_key_body_entered(body):
-	if body.name == "PlayerBody":
-		get_parent().find_node("PlayerBody").have=thingName
-#		emit_signal("getThing",)
-		Hud._on_key_getThing(get_node("Sprite").texture, thingName)
-		queue_free()
+func _on_key_getThing(texture, name):
+	get_node("Control/have/background/Texture").texture=texture
+	get_node("Control/have/Label").text=name
 	pass # Replace with function body.
