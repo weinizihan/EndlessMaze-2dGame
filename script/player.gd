@@ -1,6 +1,7 @@
 extends KinematicBody2D
 
-var speed=100
+var speed=200
+var have=""
 # Declare member variables here. Examples:
 # var a = 2
 # var b = "text"
@@ -31,3 +32,7 @@ func _physics_process(delta):
 		find_node("Player").play("walking")
 	else:
 		find_node("Player").play("stand")
+
+
+func _on_PlayerBody_body_entered(body):
+	print(body.name)
