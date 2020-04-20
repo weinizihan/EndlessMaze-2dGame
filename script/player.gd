@@ -10,6 +10,9 @@ var have=""
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	find_node("Player").play("stand")
+	var hud=load("res://object/HUD.tscn")
+	var hudNode=hud.instance()
+	# find_parent().find_node("")
 	pass # Replace with function body.
 
 
