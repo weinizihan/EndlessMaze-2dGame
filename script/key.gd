@@ -20,7 +20,8 @@ func _ready():
 
 func _on_key_body_entered(body):
 	if body.name == "PlayerBody":
-		get_parent().find_node("PlayerBody").have=thingName
+#		get_parent().find_node("PlayerBody").have=thingName
+		Global.player.have=thingName
 #		emit_signal("getThing",)
 		Hud._on_key_getThing(get_node("Sprite").texture, thingName)
 		queue_free()

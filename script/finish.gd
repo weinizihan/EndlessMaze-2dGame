@@ -18,14 +18,19 @@ func _ready():
 
 
 func _on_DestinationFlag_body_entered(body):
-	print("!!!恭喜你通过了这一关!!!")
-	var cam = get_parent().get_node("Camera2D")
-	
-	var dialog = load("res://object/LevelClearDialog.tscn")
-	var node=dialog.instance()
-	if cam==null:
-		get_parent().add_child(node)
-	else:
-		get_parent().get_node("Camera2D").add_child(node)
-	node.NextLevel=NextLevel
-	#find_node("AcceptDialog").popup()  #AcceptDialog 中信号处理
+#	print("!!!恭喜你通过了这一关!!!")
+#	var cam = get_parent().get_node("Camera2D")
+#
+#	var dialog = load("res://object/LevelClearDialog.tscn")
+#	var node=dialog.instance()
+#	if cam==null:
+#		get_parent().add_child(node)
+#	else:
+#		get_parent().get_node("Camera2D").add_child(node)
+#	node.NextLevel=NextLevel
+#	#find_node("AcceptDialog").popup()  #AcceptDialog 中信号处理
+	get_node("CanvasLayer/Dialog").popup_centered()
+
+
+func _on_Dialog_confirmed():
+	get_tree().change_scene(NextLevel)

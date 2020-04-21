@@ -1,10 +1,17 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=7 format=2]
 
+[ext_resource path="res://font/SourceHanSansCN-Normal.otf" type="DynamicFontData" id=1]
 [ext_resource path="res://img/flag.png" type="Texture" id=2]
 [ext_resource path="res://script/finish.gd" type="Script" id=3]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 9.98425, 20.6699 )
+
+[sub_resource type="DynamicFont" id=2]
+font_data = ExtResource( 1 )
+
+[sub_resource type="Theme" id=3]
+default_font = SubResource( 2 )
 
 [node name="DestinationFlag" type="Area2D"]
 position = Vector2( 35.6334, 36.6133 )
@@ -16,4 +23,19 @@ shape = SubResource( 1 )
 
 [node name="flagImg" type="Sprite" parent="."]
 texture = ExtResource( 2 )
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Dialog" type="AcceptDialog" parent="CanvasLayer"]
+margin_left = 334.631
+margin_top = 192.94
+margin_right = 880.631
+margin_bottom = 468.94
+theme = SubResource( 3 )
+window_title = "提示！"
+dialog_text = "即将进入下一关"
+__meta__ = {
+"_edit_use_anchors_": false
+}
 [connection signal="body_entered" from="." to="." method="_on_DestinationFlag_body_entered"]
+[connection signal="confirmed" from="CanvasLayer/Dialog" to="." method="_on_Dialog_confirmed"]

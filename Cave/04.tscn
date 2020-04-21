@@ -25,5 +25,6 @@ position = Vector2( 102.245, 172.692 )
 
 [node name="DestinationFlag" parent="." instance=ExtResource( 4 )]
 position = Vector2( 28.0808, 31.5783 )
+NextLevel = "res://Cave/05.tscn"
 
 [node name="Camera2D" parent="." instance=ExtResource( 6 )]
